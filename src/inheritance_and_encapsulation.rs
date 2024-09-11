@@ -1,131 +1,128 @@
-// A "superclass" for students
+// Struct for a student
 struct Student {
     name: String,
     age: u32,
     tuition: f64,
+    units: u32,
 }
+
 
 impl Student {
-    fn new(name: &str, age: u32, tuition: f64) -> Student {
+    // Constructor for Student
+    fn new(name: &str, age: u32, tuition: f64, units: u32) -> Student {
         Student {
-            name: name.to_string(),
+            name: String::from(name),
             age,
             tuition,
+            units,
         }
     }
-
-    // Encapsulated function that checks remaining balance
-    fn is_remaining_balance(&self) -> f64 {
-        self.tuition
+    // Encapsulated methods
+    fn get_name(&self) -> &str {
+        &self.name
     }
-
-    // General function that checks tuition
-    fn check_tuition(&self) {
-        println!(
-            "{}'s current remaining tuition balance: ${}",
-            self.name, self.is_remaining_balance()
-        );
+    fn get_tuition(&self) -> f64 {
+        self.tuition * self.units as f64
+    }
+    fn get_remaining_balance(&self, payment:f64) -> f64 {
+        self.get_tuition()-payment
+    }
+    fn get_units(&self) -> u32 {
+        self.units
     }
 }
 
-// Scholar that inherits student
+// Struct for a scholar
 struct Scholar {
-    student: Student,
+    student: Student,  // Scholar contains a Student (composition)
     discount: f64,
     maintaining_grade: f64,
 }
 
 impl Scholar {
-    fn new(name: &str, age: u32, tuition: f64, discount: f64, maintaining_grade: f64) -> Scholar {
+    // Constructor for Scholar
+    fn new(student: Student, discount: f64, maintaining_grade: f64) -> Scholar {
         Scholar {
-            student: Student::new(name, age, tuition),
+            student,
             discount,
             maintaining_grade,
         }
     }
+    //Encapsulated methods
+    fn get_name(&self) -> &str {
+        &self.student.get_name()
+    }
+    fn get_tuition(&self)->f64{
+        self.student.tuition
+    }
+    fn get_discounted_tuition(&self)->f64 {
+        self.student.get_tuition() - (self.student.get_tuition() * self.discount)
+    }
+    fn get_remaining_balance(&self, payment:f64) -> f64 {
+        self.get_discounted_tuition()-payment
+    }
 
-    // Encapsulated function that checks discount
-    fn check_discount(&self) -> f64 {
+    fn get_discount(&self) -> f64 {
         self.discount
     }
-
-    // Encapsulated function that checks if the scholar maintains their grade
-    fn check_maintaining_grade(&self) -> bool {
-        self.maintaining_grade >= 85.0
+    fn get_maintaining_grade(&self) -> f64{
+        self.maintaining_grade
+    }
+    fn check_maintaining_grade(&self, current_grade: f64) -> bool {
+        current_grade >= self.maintaining_grade
     }
 
-    // Encapsulated function that checks if the scholar has privileges
-    fn is_privileged(&self) -> bool {
-        self.check_maintaining_grade() && self.discount > 0.0
-    }
-
-    // Scholar's specific function that calculates discounted tuition
-    fn check_scholar_tuition(&self) {
-        let discounted_tuition = self.student.tuition - (self.student.tuition * self.discount);
-        println!(
-            "{}'s tuition after discount: ${}, Privileged: {}",
-            self.student.name,
-            discounted_tuition,
-            self.is_privileged()
-        );
-    }
 }
 
-// Regular student that inherits student
-struct RegularStudent {
-    student: Student,
-}
-
-impl RegularStudent {
-    fn new(name: &str, age: u32, tuition: f64) -> RegularStudent {
-        RegularStudent {
-            student: Student::new(name, age, tuition),
-        }
-    }
-
-    // Inherited function that checks tuition
-    fn check_tuition(&self) {
-        self.student.check_tuition();
-    }
-}
-
-// Irregular student that inherits student
+// Struct for an irregular student that inherits from Student
 struct IrregularStudent {
     student: Student,
     additional_units: u32,
 }
 
 impl IrregularStudent {
-    fn new(name: &str, age: u32, tuition: f64, additional_units: u32) -> IrregularStudent {
+    // Constructor for IrregularStudent
+    fn new(student: Student, additional_units: u32) -> IrregularStudent {
         IrregularStudent {
-            student: Student::new(name, age, tuition),
+            student,
             additional_units,
         }
     }
-
-    // Additional cost for irregular students
-    fn calculate_additional_tuition(&self) -> f64 {
-        self.student.tuition + (self.additional_units as f64 * 100.0)
+    fn get_name(&self) -> &str {
+        &self.student.get_name()
     }
-
-    // Inherited function to check tuition
-    fn check_tuition(&self) {
-        let total_tuition = self.calculate_additional_tuition();
-        println!(
-            "{}'s total tuition with additional units: ${}",
-            self.student.name, total_tuition
-        );
+    fn get_additional_units(&self) -> u32 {
+        self.additional_units
+    }
+    fn get_total_tuition(&self) -> f64 {
+        let total_units = self.student.get_units() + self.get_additional_units();
+        self.student.get_tuition() * total_units as f64
     }
 }
-
-// Main function to test the inheritance
 pub fn sub_method() {
-    let regular = RegularStudent::new("Alice", 20, 5000.0);
-    regular.check_tuition();
 
-    let scholar = Scholar::new("Bob", 22, 5000.0, 0.3, 88.0);
-    scholar.check_scholar_tuition();
+    println!("--------------------------Regular----------------------------------");
+    let student = Student::new("Alice", 20, 100000.0, 12);
+    println!("{}'s tuition: {}", student.get_name(), student.get_tuition());
+    println!("Remaining balance after payment of 3000 pesos: ${}", student.get_remaining_balance(3000.0));
 
-    let irregular = IrregularStudent::new("Charlie", 21, 5000.0, 5);
-    irregular.check_tuition();
+
+
+    println!("--------------------------Scholar----------------------------------");
+    let student_scholar = Student::new("Stephen", 21, 100000.0, 12);
+    let scholar = Scholar::new(student_scholar, 0.2, 85.0);
+    println!("{}'s discounted tuition is: {}", scholar.get_name(), scholar.get_discounted_tuition());
+    println!("Remaining balance after payment of 3000 pesos: ${}", scholar.get_remaining_balance(3000.0));
+    println!("{}'s maintaining grade: {}", scholar.get_name(), scholar.get_maintaining_grade());
+    println!("Does {} pass with a grade of 84? {}", scholar.get_name(), scholar.check_maintaining_grade(84.0));
+
+
+
+    println!("-----------------------Irregular----------------------------------");
+    let student_irreg = Student::new("Sanchie", 20, 100000.0, 12);
+    let irreg_student = IrregularStudent::new(student_irreg, 3);
+    println!("{}'s total tuition with additional units: ${}",irreg_student.get_name(), irreg_student.get_total_tuition());
 }
+
+
+
