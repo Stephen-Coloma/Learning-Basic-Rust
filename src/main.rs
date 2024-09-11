@@ -1,5 +1,6 @@
 mod conditionals_compound_types;
 mod rust_basics;
+mod functions;
 fn main() {
-    println!("Hello, world!");
+   functions::studs();
 }
