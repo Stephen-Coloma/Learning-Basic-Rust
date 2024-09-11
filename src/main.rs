@@ -19,9 +19,6 @@ mod inheritance{
 }
 
 fn main() {
-    println!("Hello, world!");
-    println!();
-
     println!("Concept of Ownership");
     println!("=================================");
     ownership::ownership::main();
