@@ -1,11 +1,13 @@
-pub fn main(){
+pub fn sub_method(){
+    println!("Concept of Ownership");
+    println!("=================================");
     println!("Welcome to Ownership");
 
     // primitive data type
     let x = 1;
     let y = x;
-    println!("{}",x);
-    println!("{}",y);
+    println!("Value of x: {}",x);
+    println!("Value of y: {}",y);
 
 
     // let string1 = String::from("Hello World");
@@ -29,7 +31,8 @@ pub fn main(){
     //
     // println!("The value of cs_student is: {:?}", cs_student);
     // println!("The value of cs_student2 is: {:?}", cs_student2);
-
+    println!("=================================");
+    println!();
 }
 
 fn add_student(student: String){

@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-pub fn studs(){
+pub fn sub_method(){
     //Creating a list of students using Hashmap
     let students = HashMap::from([
         ("Ramos".to_string(), 90),

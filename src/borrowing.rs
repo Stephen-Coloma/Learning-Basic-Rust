@@ -1,4 +1,6 @@
-pub fn main(){
+pub fn sub_method(){
+    println!("Concept of Borrowing");
+    println!("=================================");
     println!("Welcome to Borrowing");
 
     let string1 = String::from("Hello World");
@@ -24,8 +26,8 @@ pub fn main(){
     // let last_name = get_lastname(&full_name);
     // println!("Full Name: {}", full_name);
     // println!("Last Name: {}", last_name);
-
-
+    println!("=================================");
+    println!();
 }
 
 #[derive(Debug)]

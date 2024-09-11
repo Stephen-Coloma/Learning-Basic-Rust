@@ -119,7 +119,7 @@ impl IrregularStudent {
 }
 
 // Main function to test the inheritance
-pub(crate) fn main() {
+pub fn sub_method() {
     let regular = RegularStudent::new("Alice", 20, 5000.0);
     regular.check_tuition();
 

@@ -1,8 +1,8 @@
 pub fn sub_method(){
-    // conditionals();
-    // tuple_compound_data_type();
-    // arrays_compound_data_type();
-    // vectors();
+    conditionals();
+    tuple_compound_data_type();
+    arrays_compound_data_type();
+    vectors();
 }
 
 

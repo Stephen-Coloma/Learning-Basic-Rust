@@ -1,4 +1,6 @@
-pub fn main(){
+pub fn sub_method(){
+    println!("Concept of Shadowing");
+    println!("=================================");
     println!("Welcome to Shadowing");
 
     let student = String::from("Sanchie");
@@ -23,5 +25,6 @@ pub fn main(){
     // }
     //
     // println!("The value of outer i is {}", i);
-
+    println!("=================================");
+    println!();
 }

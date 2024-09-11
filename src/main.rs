@@ -1,41 +1,20 @@
 mod conditionals_compound_types;
 mod basics;
 mod functions_control_flow;
-
-mod borrowing {
-    pub mod borrowing;
-}
-
-mod shadowing {
-    pub mod shadowing;
-}
-
-mod ownership {
-    pub mod  ownership;
-}
-
-mod inheritance{
-    pub mod inheritance_and_encapsulation;
-}
+mod inheritance_and_encapsulation;
+mod abstraction_and_polymorphism;
+mod borrowing;
+mod shadowing;
+mod ownership;
 
 fn main() {
-    println!("Concept of Ownership");
-    println!("=================================");
-    ownership::ownership::main();
-    println!("=================================");
-    println!();
-
-    println!("Concept of Borrowing");
-    println!("=================================");
-    borrowing::borrowing::main();
-    println!("=================================");
-    println!();
-
-    println!("Concept of Shadowing");
-    println!("=================================");
-    shadowing::shadowing::main();
-    println!("=================================");
-    println!();
-
-    inheritance::inheritance_and_encapsulation::main();
+    //this is our main entry point for each section. Make sure to have sub_method in your rust file guys
+    basics::sub_method();
+    conditionals_compound_types::sub_method();
+    functions_control_flow::sub_method();
+    ownership::sub_method();
+    borrowing::sub_method();
+    shadowing::sub_method();
+    inheritance_and_encapsulation::sub_method();
+    abstraction_and_polymorphism::sub_method();
 }

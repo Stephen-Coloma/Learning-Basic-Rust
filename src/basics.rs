@@ -3,7 +3,7 @@
 // Constants
 const TOTAL_SUBJECTS: f32 = 8.0;
 
-pub fn compute_grade() {
+pub fn sub_method() {
     // Student details
     let student_name = "Hannah";
     let student_year = "BSCS - 2";

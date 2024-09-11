@@ -169,7 +169,7 @@ impl LogBook {
     }
 }
 
-pub(crate) fn main() {
+pub fn sub_method() {
     // instantiate logbook
     let mut log_book = LogBook::new();
 
