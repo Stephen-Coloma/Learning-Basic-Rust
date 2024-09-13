@@ -23,16 +23,6 @@ pub fn sub_method(){
     println!("Students with grades of 90 or higher");
     honor_students(&students);
 
-    //sample of loop
-    let mut _count = 0;
-    loop {
-        _count += 1;
-        if _count == 100{
-            break;
-        }
-    }
-
-    println!("{_count}");
 }
 
 
@@ -59,8 +49,6 @@ fn honor_students (students: &HashMap<String,i32>) {
     while let Some((name, &grade)) = student_iter.next() {
         if grade >= 90 {
             println!("{} is an Honor student, with a grade of {}", name, grade);
-        } else {
-            println!("{} Keep up the good work!", name);
         }
     }
 }
