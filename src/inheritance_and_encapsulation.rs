@@ -52,9 +52,7 @@ impl Scholar {
     fn get_name(&self) -> &str {
         &self.student.get_name()
     }
-    fn get_tuition(&self)->f64{
-        self.student.tuition
-    }
+    fn get_tuition(&self)->f64{ self.student.get_tuition() }
     fn get_discounted_tuition(&self)->f64 {
         self.student.get_tuition() - (self.student.get_tuition() * self.discount)
     }
