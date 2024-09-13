@@ -7,7 +7,11 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fce27e7-6696-45ba-9a48-05bd1be4b5ed" name="Changes" comment="" />
+    <list default="true" id="6fce27e7-6696-45ba-9a48-05bd1be4b5ed" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conditionals_compound_types.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/conditionals_compound_types.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,31 +30,31 @@
   <component name="MacroExpansionManager">
     <option name="directoryName" value="f6vpwyeq" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2luAuEtGGqfCwdatvjdjInIjUBD" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Cargo.Run Team2.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.rust.reset.selective.auto.import": "true",
-    "git-widget-placeholder": "sanchie-branch",
-    "last_opened_file_path": "C:/Users/Admin/Desktop/Learning-Basic-Rust",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
-    "org.rust.disableDetachedFileInspectionC:/Users/Admin/Desktop/Learning-Basic-Rust/src/borrowing/borrowing.rs": "true",
-    "org.rust.disableDetachedFileInspectionC:/Users/Admin/Desktop/Learning-Basic-Rust/src/ownership/owenership.rs": "true",
-    "org.rust.disableDetachedFileInspectionC:/Users/Admin/Desktop/Learning-Basic-Rust/src/shadowing/shadowing.rs": "true",
-    "org.rust.first.attach.projects": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Cargo.Run Team2.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.rust.reset.selective.auto.import&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Desktop/Learning-Basic-Rust&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
+    &quot;org.rust.disableDetachedFileInspectionC:/Users/Admin/Desktop/Learning-Basic-Rust/src/borrowing/borrowing.rs&quot;: &quot;true&quot;,
+    &quot;org.rust.disableDetachedFileInspectionC:/Users/Admin/Desktop/Learning-Basic-Rust/src/ownership/owenership.rs&quot;: &quot;true&quot;,
+    &quot;org.rust.disableDetachedFileInspectionC:/Users/Admin/Desktop/Learning-Basic-Rust/src/shadowing/shadowing.rs&quot;: &quot;true&quot;,
+    &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Cargo.Run Team2">
     <configuration name="Run Team2" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
       <option name="command" value="run --package Team2 --bin Team2" />
@@ -99,6 +103,7 @@
       <option name="presentableId" value="Default" />
       <updated>1726019808032</updated>
       <workItem from="1726019809107" duration="17339000" />
+      <workItem from="1726229194236" duration="3328000" />
     </task>
     <servers />
   </component>
